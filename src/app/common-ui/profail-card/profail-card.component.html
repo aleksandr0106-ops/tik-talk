@@ -1,0 +1,28 @@
+<div *ngIf="profile">
+
+<div class="profail-card">
+   <div class="avatar-name">
+    <img
+     [src]="profile.avatarUrl | imgUrl" 
+     alt="avatar" 
+     class="profail-card--avatar">
+
+    <div class="profail-card--name">
+      <strong class="a6"> {{ profile.firstName }} {{ profile.lastName }} </strong>
+      <span class="spark-title"> {{ profile.username }} </span>
+   </div>
+</div>
+
+   <div class="profail-card--description"> {{ profile.description }} </div>
+
+   <div class="profail-card--tags">
+      @for (skill of profile.stack; track skill) {
+        <div class="skill-tags"> {{ skill }} </div>
+      }
+   </div>
+
+   <div class="profail-card--action---btns">
+        <button class="btn ">Подписаться</button>
+   </div>
+   
+</div>
