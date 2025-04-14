@@ -8,10 +8,16 @@ import { Profile } from './interface/profiles.interface';
 export class ProfailsService {
 
   http = inject(HttpClient)
-  
+
   baseApiUrl = 'https://icherniakov.ru/yt-course/'
 
   getTestAccounts() {
    return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`);
   }
+
+  getMe() {
+    return this.http.get<Profile[]>(`${this.baseApiUrl}account/me`);
+  }
 }
+
+
