@@ -1,22 +1,22 @@
 import { Component, inject } from '@angular/core';
-import { ProfailsService } from '../../data/servises/profails.service';
+import { ProfileService } from '../../data/servises/profile.service';
 import { Profile } from '../../data/servises/interface/profiles.interface';
-import { ProfailCardComponent } from "../../common-ui/profail-card/profail-card.component";
+import { ProfileCardComponent } from "../../common-ui/profile-card/profile-card.component";
 
 @Component({
   selector: 'app-search-page',
-  imports: [ProfailCardComponent],
+  imports: [ProfileCardComponent],
   templateUrl: './search-page.component.html',
   styleUrl: './search-page.component.scss'
 })
 export class SearchPageComponent {
-  profileServis = inject(ProfailsService)
-  profilse: Profile[] = []
+  profileService = inject(ProfileService)
+  profiles: Profile[] = []
 
   constructor() {
-    this.profileServis.getTestAccounts()
+    this.profileService.getTestAccounts()
     .subscribe(val => {
-      this.profilse = val
+      this.profiles = val
 
     })
   }

@@ -4,21 +4,21 @@ import { CommonModule } from '@angular/common';
 import { ImgUrlPipe } from "../../helpers/pipes/img-url.pipe";
 
 @Component({
-  selector: 'app-profail-card',
+  selector: 'app-profile-card',
   standalone: true,
   imports: [CommonModule, ImgUrlPipe],
-  templateUrl: './profail-card.component.html',
-  styleUrl: './profail-card.component.scss'
+  templateUrl: './profile-card.component.html',
+  styleUrl: './profile-card.component.scss'
 })
-export class ProfailCardComponent {
+export class ProfileCardComponent {
 
 
-  
+
    @Input() profile!: Profile;
-   
+
 
 }
 
 export class RouterOutlet {
-  
+
 }
