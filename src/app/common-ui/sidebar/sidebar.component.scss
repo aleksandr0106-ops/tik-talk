@@ -27,7 +27,9 @@
   width: 100%;
   text-align: left;
   border-radius: 2px;
+  text-decoration: none;
 
+  &.active,
   &:hover,
   &:focus-visible {
     background: var(--dark-hover-color);
@@ -84,14 +86,14 @@
 
 .username-text {
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--light-color);
 
 }
 
-.settings-btn  {
-  svg {
+.settings-btn svg {
+
     width: 13px;
     height: 13px;
-    color: var(--primary-color);
-  }
+    color: var(--light-color);
+
 }
