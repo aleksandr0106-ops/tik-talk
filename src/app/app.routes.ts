@@ -6,15 +6,20 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { LayoutComponent } from './common-ui/layout/layout.component';
 import { canActivateAuth } from './auth/auth.access';
 import {SettingsPageComponent} from './pages/settings-page/settings-page.component';
+import {ChatsPageComponent} from './pages/chats-pages/chats.component';
 
 
 export const routes: Routes = [
     {
         path: '', component: LayoutComponent, children: [
-        { path: '', redirectTo: 'profile/me', pathMatch: 'full'},
-        { path: 'profile/:id', component: ProfilePageComponent },
-        { path: 'settings', component: SettingsPageComponent },
-        { path: 'search', component: SearchPageComponent },
+          { path: '', redirectTo: 'profile/me', pathMatch: 'full'},
+          { path: 'profile/:id', component: ProfilePageComponent },
+          { path: 'settings', component: SettingsPageComponent },
+          { path: 'search', component: SearchPageComponent },
+
+          { path: 'chats',
+            loadChildren: chatsRoutes
+          },
         ],
         canActivate: [canActivateAuth]
     },
